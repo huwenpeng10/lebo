@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/back"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/viewpager_ll_bg">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/viewpager_header_img_sdv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="5dp"
+            fresco:actualImageScaleType="centerInside"
+            fresco:roundAsCircle="true"
+            fresco:roundWithOverlayColor="@color/gray_bg"
+            fresco:roundingBorderColor="@color/gray"
+            fresco:roundingBorderWidth="1dp"
+            android:background="@drawable/menu"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/live_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:text="@string/app_name"/>
+
+            <TextView
+                android:id="@+id/live_location_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                android:layout_below="@id/live_name_tv"
+                android:padding="5dp"
+                android:text="@string/app_name"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewpager_rv">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/layout"
+        android:id="@+id/layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/viewpager_ll_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="直播人数:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="123456"
+            android:id="@+id/viewpager_tv_sum"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout4"
+        android:layout_below="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewpager_timer"
+            android:text="00:00:00"/>
+
+        <TextView
+            android:paddingTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewpager_timers"
+            android:text="2017"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/liaotian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="聊天"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/tv_bg"/>
+
+        <EditText
+            android:layout_toRightOf="@+id/liaotian"
+            android:layout_toLeftOf="@+id/gift"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入文字"
+            android:id="@+id/viewpager_ed"
+            android:visibility="gone"/>
+
+        <TextView
+            android:paddingRight="5dp"
+            android:layout_toLeftOf="@+id/gift"
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="发送"
+            android:visibility="gone"
+            android:background="@drawable/tv_bg"/>
+
+        <TextView
+            android:id="@+id/gift"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="送礼物"
+            android:background="@drawable/tv_bg"/>
+
+        <TextView
+            android:layout_marginRight="5dp"
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="喜欢"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/tv_bg"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_above="@+id/rl"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:id="@+id/viewpager_listview"
+        android:paddingBottom="20dp"
+        >
+
+    </ListView>
+
+    <h5demo.hwp.com.lebo.like.HeartLayout
+        android:layout_above="@+id/rl"
+        android:layout_below="@+id/layout4"
+        android:id="@+id/heart_layout"
+        android:layout_width="100dip"
+        android:layout_height="300dip"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dip"
+        android:layout_alignParentRight="true">
+
+    </h5demo.hwp.com.lebo.like.HeartLayout>
+
+    <FrameLayout
+        android:id="@+id/sendgift"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+    </FrameLayout>
+
+</RelativeLayout>
